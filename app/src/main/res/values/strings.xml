@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">PokeApi</string>
+
+    <!--Content description-->
+    <string name="pokeball">Pokeball</string>
+    <string name="pokemon_logo">Pokemon</string>
+    <!--URL's-->
+    <string name="urlApi">https://pokeapi.co/api/v2/pokemon?limit=151</string>
+    <!--Claves-->
+    <string name="results">results</string>
+    <string name="name">name</string>
+    <string name="url">url</string>
+    <string name="type">type</string>
+    <string name="artwork">official-artwork</string>
+    <string name="other">other</string>
+    <string name="sprites">sprites</string>
+    <string name="img">front_default</string>
+    <!--Strings-->
+    <string name="vacio"></string>
+    <string name="number"># </string>
+    <string name="nameS">NAME</string>
+    <string name="height">height</string>
+    <string name="weight">weight</string>
+    <string name="exp">EXP</string>
+    <string name="types">types</string>
+    <string name="species">species</string>
+    <string name="base_experience">base_experience</string>
+    <!--types-->
+    <string name="bug">bug</string>
+    <string name="dark">dark</string>
+    <string name="dragon">dragon</string>
+    <string name="electric">electric</string>
+    <string name="fairy">fairy</string>
+    <string name="fighting">fighting</string>
+    <string name="fire">fire</string>
+    <string name="flying">flying</string>
+    <string name="ghost">ghost</string>
+    <string name="grass">grass</string>
+    <string name="ground">ground</string>
+    <string name="ice">ice</string>
+    <string name="normal">normal</string>
+    <string name="poison">poison</string>
+    <string name="psychic">psychic</string>
+    <string name="rock">rock</string>
+    <string name="steel">steel</string>
+    <string name="water">water</string>
+
+</resources>

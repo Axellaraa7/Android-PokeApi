@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_700"
+    tools:context=".PokemonView">
+
+    <TextView
+        android:id="@+id/tvHeightS"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/eagle_lake"
+        android:text="@string/height"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvExpS"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <TextView
+        android:id="@+id/tvNamePokemon"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/eagle_lake"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toEndOf="@+id/tvNameS"
+        app:layout_constraintTop_toBottomOf="@+id/ivPokemon"
+        app:layout_constraintVertical_bias="0.057" />
+
+    <ImageView
+        android:id="@+id/ivPokemon"
+        android:layout_width="0dp"
+        android:layout_height="350dp"
+        android:contentDescription="@string/vacio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <TextView
+        android:id="@+id/tvWeight"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/eagle_lake"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toEndOf="@+id/tvWeightS"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeight"
+        app:layout_constraintVertical_bias="0.135" />
+
+    <TextView
+        android:id="@+id/tvWeightS"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="244dp"
+        android:fontFamily="@font/eagle_lake"
+        android:text="@string/weight"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeightS"
+        app:layout_constraintVertical_bias="0.135" />
+
+    <LinearLayout
+        android:id="@+id/llTypes"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintStart_toEndOf="@+id/tvTypes"
+        app:layout_constraintTop_toBottomOf="@+id/tvWeight"
+        app:layout_constraintVertical_bias="0.413"></LinearLayout>
+
+    <TextView
+        android:id="@+id/tvExp"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/eagle_lake"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toEndOf="@+id/tvExpS"
+        app:layout_constraintTop_toBottomOf="@+id/tvNamePokemon"
+        app:layout_constraintVertical_bias="0.075" />
+
+    <TextView
+        android:id="@+id/tvTypes"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/eagle_lake"
+        android:text="@string/types"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWeightS"
+        app:layout_constraintVertical_bias="0.424" />
+
+    <TextView
+        android:id="@+id/tvHeight"
+        android:layout_width="240dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/eagle_lake"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toEndOf="@+id/tvHeightS"
+        app:layout_constraintTop_toBottomOf="@+id/tvExp"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <TextView
+        android:id="@+id/tvExpS"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/eagle_lake"
+        android:text="@string/exp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameS"
+        app:layout_constraintVertical_bias="0.075" />
+
+    <TextView
+        android:id="@+id/tvNameS"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/eagle_lake"
+        android:text="@string/nameS"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPokemon"
+        app:layout_constraintVertical_bias="0.057" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
