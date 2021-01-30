@@ -2,7 +2,11 @@ package com.computomovil.pokeapi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -15,10 +19,16 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.computomovil.pokeapi.infoPokemon.Pokemon;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class PokemonView extends AppCompatActivity {
 
@@ -43,7 +53,9 @@ public class PokemonView extends AppCompatActivity {
         tvExp=findViewById(R.id.tvExp);
         tvHeight=findViewById(R.id.tvHeight);
         tvWeight=findViewById(R.id.tvWeight);
+        ivPokemon=findViewById(R.id.ivPokemon);
         llTypes=findViewById(R.id.llTypes);
+
 
         bundle=getIntent().getExtras();
         if(bundle!=null) {
@@ -115,7 +127,9 @@ public class PokemonView extends AppCompatActivity {
     }
 
     //Setter del ImageView con la url de la img
-    private void setImageView(String img){}
+    private void setImageView(String img){
+        Picasso.with(PokemonView.this).load(img).into(ivPokemon);
+    }
 
     //Setter de los TextViews
     private void setTextViews(String nombre, String exp, String alt, String peso){
@@ -132,12 +146,12 @@ public class PokemonView extends AppCompatActivity {
         for(int i=0;i<tipos.length;i++){
             types[i]=new ImageView(this);
             types[i].setLayoutParams(new ViewGroup.LayoutParams(getResources().getInteger(R.integer.weight),getResources().getInteger(R.integer.height)));
-            selectImage(i,tipos);
+            selectType(i,tipos);
             llTypes.addView(types[i]);
         }
     }
 
-    private void selectImage(int position,String[] tipos) {
+    private void selectType(int position,String[] tipos) {
         if (getResources().getString(R.string.bug).equals(tipos[position])) {
             types[position].setImageDrawable(getResources().getDrawable(R.drawable.bug));
         } else if (getResources().getString(R.string.dark).equals(tipos[position])) {
