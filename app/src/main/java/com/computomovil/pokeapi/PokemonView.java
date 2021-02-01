@@ -145,7 +145,7 @@ public class PokemonView extends AppCompatActivity {
         types=new ImageView[tipos.length];
         for(int i=0;i<tipos.length;i++){
             types[i]=new ImageView(this);
-            types[i].setLayoutParams(new ViewGroup.LayoutParams(getResources().getInteger(R.integer.weight),getResources().getInteger(R.integer.height)));
+            types[i].setLayoutParams(new ViewGroup.LayoutParams(llTypes.getWidth()/getResources().getInteger(R.integer.weightDiv), ViewGroup.LayoutParams.WRAP_CONTENT));
             selectType(i,tipos);
             llTypes.addView(types[i]);
         }

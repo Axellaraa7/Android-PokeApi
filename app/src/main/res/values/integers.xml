@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="uno">1</integer>
-    <integer name="weight">220</integer>
-    <integer name="height">120</integer>
+    <integer name="weightDiv">2</integer>
 </resources>
