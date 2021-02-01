@@ -30,7 +30,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ListView lvPokemones;
-    protected ArrayList<Pokemon> pokemones;
+    protected ArrayList<Pokemon> pokemones=new ArrayList<>();
 
     private String url;
     private JsonObjectRequest jsonObject;
@@ -43,24 +43,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         lvPokemones=findViewById(R.id.lvPokemones);
-        pokemones=conexion();
-        AdapterPk adapterPk=new AdapterPk(this,pokemones);
-        lvPokemones.setAdapter(adapterPk);
-
-        lvPokemones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent description=new Intent(MainActivity.this,PokemonView.class);
-                Bundle bundle=new Bundle();
-                bundle.putString(getResources().getString(R.string.url),pokemones.get(position).getUrl());
-                description.putExtras(bundle);
-                startActivity(description);
-            }
-        });
+        conexion();
     }
 
-    private ArrayList<Pokemon> conexion(){
-        ArrayList<Pokemon> pokemones=new ArrayList<>();
+    private void conexion(){
         queue= Volley.newRequestQueue(this);
         url=getResources().getString(R.string.urlApi);
         jsonObject=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -74,20 +60,29 @@ public class MainActivity extends AppCompatActivity {
                         Pokemon pokemon=new Pokemon(name,i,urlPk);
                         pokemones.add(pokemon);
                     }
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                } catch (JSONException e) { e.printStackTrace();
                 }
+                finally{
+                    AdapterPk adapterPk=new AdapterPk(MainActivity.this,pokemones);
+                    lvPokemones.setAdapter(adapterPk);
 
+                    lvPokemones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Intent description=new Intent(MainActivity.this,PokemonView.class);
+                            Bundle bundle=new Bundle();
+                            bundle.putString(getResources().getString(R.string.url),pokemones.get(position).getUrl());
+                            description.putExtras(bundle);
+                            startActivity(description);
+                        }
+                    });
+                }
             }
         }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
+            public void onErrorResponse(VolleyError error) { error.printStackTrace(); }
         });
-
         queue.add(jsonObject);
-        return pokemones;
     }
 
 }
