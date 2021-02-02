@@ -71,7 +71,8 @@ public class PokemonView extends AppCompatActivity {
         jsonObject=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                String nombre="",exp="",alt="",peso="",img="";
+                String nombre= getResources().getString(R.string.vacio),exp=getResources().getString(R.string.vacio),alt=getResources().getString(R.string.vacio);
+                String peso=getResources().getString(R.string.vacio),img=getResources().getString(R.string.vacio);
                 String tipos[];
                 try {
                     nombre=response.getJSONObject(getResources().getString(R.string.species)).getString(getResources().getString(R.string.name));
